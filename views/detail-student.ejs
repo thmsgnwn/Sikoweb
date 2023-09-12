@@ -1,0 +1,58 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="fw-bold">Detail Contact</h2>
+      <% if (student === undefined) { %>
+      <p class="alert alert-danger fw-bold" role="alert">
+        404 Contact Not Found <br /><a
+          href="/student"
+          class="alert-link fw-light"
+          >&laquo; back to student</a
+        >
+      </p>
+      <% } else { %>
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title fw-bold"><%= student.fullName %></h5>
+          <h6 class="card-subtitle mb-2 text-primary fw-bold">
+            Nis: <%= student.nis %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-primary fw-bold">
+            Grade: <%= student.grade %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted fw-bold">
+            Email: <%= student.email %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted fw-bold">
+            Age: <%= student.age %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted fw-bold">
+            Hobby: <%= student.hobby %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted fw-bold">
+            Phone: <%= student.phone %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-primary fw-bold">
+            Address: <%= student.address %>
+          </h6>
+
+          <a
+            href="/student/edit/<%= student.name %>"
+            class="btn btn-warning badge fw-bold text-dark"
+            >update</a
+          >
+          <a
+            href="/student/delete/<%= student.name %>"
+            class="btn btn-danger badge fw-normal"
+            onclick="return confirm('Are you sure to remove this data?');"
+            >remove</a
+          >
+          <a href="/student" class="card-link d-block mt-3"
+            >&laquo; back to list students</a
+          >
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>

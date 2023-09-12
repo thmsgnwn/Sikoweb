@@ -1,0 +1,46 @@
+<!-- { nis, fullName, grade, hobby, age, email, phone, address } -->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="fw-bold">List Students</h2>
+      <h1></h1>
+      <hr />
+      <a href="/student/add" class="btn btn-primary fw-bold mb-2 badge"
+        >Input New Student</a
+      >
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nis</th>
+            <th scope="col">Name</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Address</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% students.forEach( (row, index)=> {index++ %>
+          <tr>
+            <th><%= index++ %></th>
+            <td><%= row.nis %></td>
+            <td><%= row.fullName %></td>
+            <td><%= row.grade %></td>
+            <td><%= row.address %></td>
+            <td>
+              <a
+                href="/student/<%= row.id %>"
+                class="btn btn-info badge rounded-pill text-dark"
+                ><i class="bi bi-info-circle"> detail</i></a
+              >
+            </td>
+          </tr>
+
+          <% } ) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

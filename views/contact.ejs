@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="fw-bold">List Contacts</h2>
+      <h1></h1>
+      <hr />
+      <a href="/contact/add" class="btn btn-primary fw-bold mb-2"
+        >Input New Contact</a
+      >
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <% let number = 1 %> -->
+          <% cs.forEach((contact, index) => { index++ %>
+
+          <tr>
+            <th scope="row"><%= index++ %></th>
+            <td><%= contact.name %></td>
+            <td><%= contact.phone %></td>
+            <td>
+              <a
+                href="/contact/<%= contact.name  %>"
+                class="btn btn-info badge rounded-pill text-dark"
+                ><i class="bi bi-info-circle"> detail</i></a
+              >
+            </td>
+          </tr>
+
+          <% }) %>
+        </tbody>
+      </table>
+
+      <% if (cs.length === 0) { %>
+      <p class="fw-bold text-danger alert alert-danger">Contact data Empty</p>
+      <% } %>
+    </div>
+  </div>
+</div>
